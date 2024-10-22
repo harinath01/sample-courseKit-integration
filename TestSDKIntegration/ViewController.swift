@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         let firstVC = TestpressCourse.shared.getMyCoursesViewController()!
         let navigationController = UINavigationController(rootViewController: firstVC)
         navigationController.modalPresentationStyle = .fullScreen
+        navigationController.navigationBar.barTintColor = .blue
         present(navigationController, animated: true, completion: nil)
     }
 }

@@ -14,7 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        TestpressCourse.shared.initialize(withToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6NjA2NzQsInVzZXJfaWQiOjYwNjc0LCJpbnN0aXR1dGUiOjczOSwiaWQiOjYwNjc0LCJleHAiOjE3MjkxNTI3NTYsImVtYWlsIjoicHJ1dGhpdmlyYWpAdGVzdHByZXNzLmluIn0.8uON7GGcGpsz38v8rJvCy1CwNz8udjMIkINrGdY1ExE", subdomain: "lmsdemo", primaryColor: "#FF8DA1")
+        TestpressCourse.shared.initialize(withToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6NjA2NzQsInVzZXJfaWQiOjYwNjc0LCJpbnN0aXR1dGUiOjczOSwiaWQiOjYwNjc0LCJleHAiOjE3MjkxNTI3NTYsImVtYWlsIjoicHJ1dGhpdmlyYWpAdGVzdHByZXNzLmluIn0.8uON7GGcGpsz38v8rJvCy1CwNz8udjMIkINrGdY1ExE", subdomain: "lmsdemo", primaryColor: "#2196F3")
+        customizeAppearance()
         return true
     }
 
@@ -32,6 +33,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    private func customizeAppearance() {
+        let navBarAppearance = UINavigationBar.appearance()
+        navBarAppearance.isTranslucent = false
+        navBarAppearance.backgroundColor = TestpressCourse.shared.primaryColor
+        navBarAppearance.barTintColor = TestpressCourse.shared.primaryColor
+        UIBarButtonItem.appearance().tintColor = Colors.getRGB(Colors.PRIMARY_TEXT)
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.getRGB(Colors.PRIMARY_TEXT)]
 
+        if !UIUtils.isiPad() {
+            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -5)
+        }
+    }
 }
 
