@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CourseKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        TestpressCourse.shared.initialize(withToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6NjA2NzQsInVzZXJfaWQiOjYwNjc0LCJpbnN0aXR1dGUiOjczOSwiaWQiOjYwNjc0LCJleHAiOjE3MjkxNTI3NTYsImVtYWlsIjoicHJ1dGhpdmlyYWpAdGVzdHByZXNzLmluIn0.8uON7GGcGpsz38v8rJvCy1CwNz8udjMIkINrGdY1ExE", subdomain: "lmsdemo", primaryColor: "#FF8DA1")
         return true
     }
 
